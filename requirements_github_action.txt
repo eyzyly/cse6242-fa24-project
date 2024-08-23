@@ -1,0 +1,12 @@
+cron-descriptor==1.4.3
+dlt==0.5.3
+duckdb==0.10.3
+gcsfs==2024.6.1
+google-cloud-bigquery==3.25.0
+google-cloud-bigquery-storage==2.25.0
+importlib-metadata==8.0.0
+importlib-resources==6.4.0
+jaraco.text==3.12.1
+pipdeptree==2.9.6
+platformdirs==4.2.2
+tomli==2.0.1
