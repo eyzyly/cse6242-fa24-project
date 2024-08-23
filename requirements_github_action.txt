@@ -10,3 +10,4 @@ jaraco.text==3.12.1
 pipdeptree==2.9.6
 platformdirs==4.2.2
 tomli==2.0.1
+pandas==2.2.2
