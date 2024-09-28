@@ -32,28 +32,57 @@ Before you begin, ensure you have the following software installed:
    ```
 
 4. **Create the `profiles.yml` File**  
-   In the `.dbt` folder, create a file named `profiles.yml`:
+   In the `.dbt` folder, create an empty file named `profiles.yml`:
    ```bash
    touch $HOME/.dbt/profiles.yml
    ```
 
-5. **Open the Project in VS Code**  
+5. **Add Boilerplate Code to `profiles.yml`**  
+   Open the `profiles.yml` file and paste the following boilerplate code:
+   ```yaml
+   cse6242_dbt:
+     target: personal
+     outputs:
+       personal:
+         dataset: dbt_<ez> # replace <ez> with your initials, e.g., dbt_ez, dbt_bf, etc.
+         job_execution_timeout_seconds: 300
+         job_retries: 1
+         location: US
+         method: oauth
+         priority: interactive
+         project: <GCP project id> # find from Notion
+         threads: 10
+         type: bigquery
+         
+        production:
+         dataset: analytics 
+         job_execution_timeout_seconds: 300
+         job_retries: 1
+         location: US
+         method: oauth
+         priority: interactive
+         project: <GCP project id> # find from Notion
+         threads: 10
+         type: bigquery
+   ```
+
+6. **Open the Project in VS Code**  
    Open Visual Studio Code and navigate to the project directory:
    ```bash
    cd cse6242-fa24-project
    ```
 
-6. **Rebuild the Dev Container**  
+7. **Rebuild the Dev Container**  
    In VS Code, look for the green square with two chevrons (>) at the bottom left. Click on it and select the option to rebuild the container using `ingestion_transform`.
 
-7. **Wait for Installation**  
+8. **Wait for Installation**  
    Wait for the installation to complete. This may take a few minutes, and you should see a message saying "Done, press any key to go to the terminal."
 
-8. **Restart VS Code**  
+9. **Restart VS Code**  
    Although it may seem strange, close the VS Code window and open it again.
 
-9. **Reopen the Project in the Container**  
-   Go to the project directory again. A "Reopen in Container" prompt should appear. Click it!
+10. **Reopen the Project in the Container**  
+    Go to the project directory again. A "Reopen in Container" prompt should appear. Click it!
 
-10. **Verify the Dev Container Configuration**  
-   Once the container is reopened, it should be configured correctly for development.
+11. **Verify the Dev Container Configuration**  
+    Once the container is reopened, it should be configured correctly for development.
