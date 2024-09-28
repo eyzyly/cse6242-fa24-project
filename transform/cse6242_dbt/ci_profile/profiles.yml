@@ -1,0 +1,21 @@
+cse6242_dbt:
+  target: "{{ env_var('DBT_PROFILE_TARGET') }}"
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: "cse-6242-fa24-dev"
+      keyfile: "{{ env_var('DBT_PROFILE_KEYFILE_DEV') }}"
+      dataset: "ci"
+      threads: 10
+      timeout_seconds: 300
+      location: "us"  # e.g., US, EU
+    production:
+      type: bigquery
+      method: service-account
+      project: "cse-6242-fa24-prod"
+      keyfile: "{{ env_var('DBT_PROFILE_KEYFILE_PROD') }}"
+      dataset: "production"
+      threads: 10
+      timeout_seconds: 300
+      location: "us"  # e.g., US, EU

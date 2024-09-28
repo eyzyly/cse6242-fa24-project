@@ -16,7 +16,31 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip install -r ingestion-requirements.txt"
+	"postCreateCommand": "pip install -r ingestion-requirements.txt",
+
+	"mounts": [
+		"source=${localEnv:HOME}/.dbt/profiles.yml,target=/home/vscode/.dbt/profiles.yml,type=bind"
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"innoverio.vscode-dbt-power-user",
+				"samuelcolvin.jinjahtml",
+				"bastienboutonnet.vscode-dbt",
+				"eamodio.gitlens",
+				"mhutchie.git-graph",
+				"janisdd.vscode-edit-csv"
+			],
+			"settings": {
+				"files.associations": {
+					"*.sql": "jinja-sql",
+					"*.yml": "jinja-yaml"
+				},
+				"python.defaultInterpreterPath": "/usr/local/python/current/bin/python",
+				"python.showInterpreterStatusBar": true
+			}
+		}
+	}
 
 	// Configure tool-specific properties.
 	// "customizations": {},
