@@ -16,7 +16,11 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip install -r ingestion-requirements.txt"
+	"postCreateCommand": "pip install -r ingestion-requirements.txt",
+
+	"mounts": [
+		"source=${localEnv:HOME}/.dbt/profiles.yml,target=/home/vscode/.dbt/profiles.yml,type=bind"
+	]
 
 	// Configure tool-specific properties.
 	// "customizations": {},
