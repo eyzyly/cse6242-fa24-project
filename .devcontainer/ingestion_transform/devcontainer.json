@@ -20,7 +20,19 @@
 
 	"mounts": [
 		"source=${localEnv:HOME}/.dbt/profiles.yml,target=/home/vscode/.dbt/profiles.yml,type=bind"
-	]
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"innoverio.vscode-dbt-power-user",
+				"samuelcolvin.jinjahtml",
+				"bastienboutonnet.vscode-dbt",
+				"eamodio.gitlens",
+				"mhutchie.git-graph",
+				"janisdd.vscode-edit-csv"
+			]
+		}
+	}
 
 	// Configure tool-specific properties.
 	// "customizations": {},
