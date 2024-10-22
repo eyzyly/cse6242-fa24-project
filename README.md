@@ -1,6 +1,6 @@
 # CSE6242 - Data & Visual Analytics - Fall 2024
 
-## Prerequisites
+## Prerequisites (Local Setup)
 
 Before you begin, ensure you have the following software installed:
 
@@ -9,7 +9,12 @@ Before you begin, ensure you have the following software installed:
 3. **Docker Desktop** - Download and install from [Docker Desktop](https://www.docker.com/products/docker-desktop).
 4. **GitHub Account** - Set up a GitHub account if you don’t already have one.
 
-## Setting Up Your Development Environment
+## Prerequisites (Codespaces)
+
+Before you begin, ensure you have the following software installed:
+1. **GitHub Account** - Github Account + Access to this Github Repo as a contributor
+
+## Setting Up Your Development Environment (Local or Codespaces)
 
 1. **Fork the Project Repository**  
    Fork the project repo by visiting [this link](https://github.com/eyzyly/cse6242-fa24-project).
