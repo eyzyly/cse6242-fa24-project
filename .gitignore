@@ -1,3 +1,4 @@
 .DS_Store
 .devcontainer/.DS_Store
 transform/logs/dbt.log
+.vscode/settings.json
