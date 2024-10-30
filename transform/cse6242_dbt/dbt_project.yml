@@ -32,7 +32,15 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   cse6242_dbt:
     # Config indicated by + and applies to all files under models/example/
+    staging:
+      +schema: staging
+      +materialized: view
+      +persist_docs:
+        columns: true
+
+
     marts:
+      +schema: marts
       +materialized: table
       +persist_docs:
         columns: true
