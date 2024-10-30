@@ -3,7 +3,7 @@ with source as (
 ),
 renamed as (
     select
-        date as trading_date,
+        date(date) as trading_date,
         _adj_close_hdx as adj_close_hd,
         _adj_close_lowx as adj_close_low,
         _adj_close_spyx as adj_close_spyx
