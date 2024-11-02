@@ -29,7 +29,8 @@
 				"bastienboutonnet.vscode-dbt",
 				"eamodio.gitlens",
 				"mhutchie.git-graph",
-				"janisdd.vscode-edit-csv"
+				"janisdd.vscode-edit-csv",
+				"alexcvzz.vscode-sqlite"
 			],
 			"settings": {
 				"files.associations": {
