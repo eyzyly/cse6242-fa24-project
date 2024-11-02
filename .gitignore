@@ -3,3 +3,5 @@
 transform/logs/dbt.log
 .vscode/settings.json
 ingestion/hurricane_data/nhc.sqlite
+.vscode/launch.json
+nhc.sqlite
