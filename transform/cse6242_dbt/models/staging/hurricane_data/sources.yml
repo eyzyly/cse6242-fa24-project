@@ -1,0 +1,293 @@
+version: 2
+
+sources:
+  - name: hurricane
+    loader: gcloud storage
+    tables:
+      - name: lines
+        external:
+          location: 'gs://nhc-csv-test/test/lines.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+            
+      - name: points
+        external:
+          location: 'gs://nhc-csv-test/test/points.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: radii
+        external:
+          location: 'gs://nhc-csv-test/test/radii.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+    
+      - name: windswath
+        external:
+          location: 'gs://nhc-csv-test/test/windswath.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      # New tables from gs://nhc-csv-test/test/
+      - name: elementary_geometries
+        external:
+          location: 'gs://nhc-csv-test/test/ElementaryGeometries.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: spatial_index
+        external:
+          location: 'gs://nhc-csv-test/test/SpatialIndex.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: data_licenses
+        external:
+          location: 'gs://nhc-csv-test/test/data_licenses.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: geometry_columns
+        external:
+          location: 'gs://nhc-csv-test/test/geometry_columns.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: geometry_columns_auth
+        external:
+          location: 'gs://nhc-csv-test/test/geometry_columns_auth.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: geometry_columns_field_infos
+        external:
+          location: 'gs://nhc-csv-test/test/geometry_columns_field_infos.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: geometry_columns_statistics
+        external:
+          location: 'gs://nhc-csv-test/test/geometry_columns_statistics.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: geometry_columns_time
+        external:
+          location: 'gs://nhc-csv-test/test/geometry_columns_time.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: idx_lines_geometry
+        external:
+          location: 'gs://nhc-csv-test/test/idx_lines_GEOMETRY.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: idx_lines_geometry_node
+        external:
+          location: 'gs://nhc-csv-test/test/idx_lines_GEOMETRY_node.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: idx_lines_geometry_parent
+        external:
+          location: 'gs://nhc-csv-test/test/idx_lines_GEOMETRY_parent.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: idx_lines_geometry_rowid
+        external:
+          location: 'gs://nhc-csv-test/test/idx_lines_GEOMETRY_rowid.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: idx_points_geometry
+        external:
+          location: 'gs://nhc-csv-test/test/idx_points_GEOMETRY.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: idx_points_geometry_node
+        external:
+          location: 'gs://nhc-csv-test/test/idx_points_GEOMETRY_node.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: idx_points_geometry_parent
+        external:
+          location: 'gs://nhc-csv-test/test/idx_points_GEOMETRY_parent.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: idx_points_geometry_rowid
+        external:
+          location: 'gs://nhc-csv-test/test/idx_points_GEOMETRY_rowid.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: idx_radii_geometry
+        external:
+          location: 'gs://nhc-csv-test/test/idx_radii_GEOMETRY.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: idx_radii_geometry_node
+        external:
+          location: 'gs://nhc-csv-test/test/idx_radii_GEOMETRY_node.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: idx_radii_geometry_parent
+        external:
+          location: 'gs://nhc-csv-test/test/idx_radii_GEOMETRY_parent.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: idx_radii_geometry_rowid
+        external:
+          location: 'gs://nhc-csv-test/test/idx_radii_GEOMETRY_rowid.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: idx_windswath_geometry
+        external:
+          location: 'gs://nhc-csv-test/test/idx_windswath_GEOMETRY.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: idx_windswath_geometry_node
+        external:
+          location: 'gs://nhc-csv-test/test/idx_windswath_GEOMETRY_node.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: idx_windswath_geometry_parent
+        external:
+          location: 'gs://nhc-csv-test/test/idx_windswath_GEOMETRY_parent.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: idx_windswath_geometry_rowid
+        external:
+          location: 'gs://nhc-csv-test/test/idx_windswath_GEOMETRY_rowid.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: spatial_ref_sys
+        external:
+          location: 'gs://nhc-csv-test/test/spatial_ref_sys.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: spatial_ref_sys_aux
+        external:
+          location: 'gs://nhc-csv-test/test/spatial_ref_sys_aux.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: spatialite_history
+        external:
+          location: 'gs://nhc-csv-test/test/spatialite_history.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: sql_statements_log
+        external:
+          location: 'gs://nhc-csv-test/test/sql_statements_log.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: sqlite_sequence
+        external:
+          location: 'gs://nhc-csv-test/test/sqlite_sequence.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: views_geometry_columns
+        external:
+          location: 'gs://nhc-csv-test/test/views_geometry_columns.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: views_geometry_columns_auth
+        external:
+          location: 'gs://nhc-csv-test/test/views_geometry_columns_auth.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: views_geometry_columns_field_infos
+        external:
+          location: 'gs://nhc-csv-test/test/views_geometry_columns_field_infos.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: views_geometry_columns_statistics
+        external:
+          location: 'gs://nhc-csv-test/test/views_geometry_columns_statistics.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: virts_geometry_columns
+        external:
+          location: 'gs://nhc-csv-test/test/virts_geometry_columns.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: virts_geometry_columns_auth
+        external:
+          location: 'gs://nhc-csv-test/test/virts_geometry_columns_auth.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: virts_geometry_columns_field_infos
+        external:
+          location: 'gs://nhc-csv-test/test/virts_geometry_columns_field_infos.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
+
+      - name: virts_geometry_columns_statistics
+        external:
+          location: 'gs://nhc-csv-test/test/virts_geometry_columns_statistics.csv'
+          options:
+            format: csv
+            skip_leading_rows: 1
