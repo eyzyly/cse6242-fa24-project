@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: stock_price
+    project: cse-6242-fa24-lz
+    dataset: stock_prices_data
+    tables:
+      - name: stock_price_history
