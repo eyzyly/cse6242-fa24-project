@@ -16,8 +16,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip install -r ingestion-requirements.txt",
-
+	"postCreateCommand": "sudo apt-get update && sudo apt-get install -y sqlite3 && pip install -r ingestion-requirements.txt",
 	"mounts": [
 		"source=${localEnv:HOME}/.dbt/profiles.yml,target=/home/vscode/.dbt/profiles.yml,type=bind"
 	],
