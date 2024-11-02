@@ -2,3 +2,4 @@
 .devcontainer/.DS_Store
 transform/logs/dbt.log
 .vscode/settings.json
+ingestion/hurricane_data/nhc.sqlite
