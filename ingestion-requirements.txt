@@ -104,6 +104,7 @@ rich==13.7.1
 rpds-py==0.20.0
 rsa==4.9
 semver==3.0.2
+shapely==2.0.6
 simplejson==3.19.3
 six==1.16.0
 smmap==5.0.1
