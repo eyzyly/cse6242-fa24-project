@@ -45,15 +45,29 @@ title: Can you make money with Hurricanes?
     series=category
 />
 
-```sql stock_prices
+```sql stock_prices_all
   select
       *
   from analytics_marts.stock_prices
 ```
 
 <LineChart
-    data={stock_prices}
+    data={stock_prices_all}
     title="Stock prices from 2014-2023"
+    x=trading_date
+    y={['adj_close_hd','adj_close_low','adj_close_spyx']} 
+/>
+
+```sql stock_prices_hurricane
+  select
+      *
+  from analytics_marts.stock_prices
+  WHERE EXTRACT(MONTH FROM trading_date) BETWEEN 6 AND 11
+```
+
+<LineChart
+    data={stock_prices_hurricane}
+    title="Stock prices during Hurricane Season 2014-2023"
     x=trading_date
     y={['adj_close_hd','adj_close_low','adj_close_spyx']} 
 />
