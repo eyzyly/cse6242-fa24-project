@@ -72,6 +72,38 @@ title: Can you make money with Hurricanes?
     y={['adj_close_hd','adj_close_low','adj_close_spyx']} 
 />
 
+```sql stock_prices_hurricane_annual_returns
+  WITH stock_prices AS (
+  SELECT 
+    trading_date,
+    EXTRACT(YEAR FROM trading_date) AS year,
+    adj_close_hd,
+    adj_close_low,
+    adj_close_spyx
+  FROM analytics_marts.stock_prices
+  WHERE (EXTRACT(MONTH FROM trading_date) = 6 AND EXTRACT(DAY FROM trading_date) = 1)
+     OR (EXTRACT(MONTH FROM trading_date) = 11 AND EXTRACT(DAY FROM trading_date) = 30)
+)
+
+SELECT 
+  year,
+  (MAX(CASE WHEN EXTRACT(MONTH FROM trading_date) = 11 THEN adj_close_hd END) 
+   - MIN(CASE WHEN EXTRACT(MONTH FROM trading_date) = 6 THEN adj_close_hd END)) 
+   / MIN(CASE WHEN EXTRACT(MONTH FROM trading_date) = 6 THEN adj_close_hd END) * 100 AS hd_percentage_change,
+  
+  (MAX(CASE WHEN EXTRACT(MONTH FROM trading_date) = 11 THEN adj_close_low END) 
+   - MIN(CASE WHEN EXTRACT(MONTH FROM trading_date) = 6 THEN adj_close_low END)) 
+   / MIN(CASE WHEN EXTRACT(MONTH FROM trading_date) = 6 THEN adj_close_low END) * 100  AS low_percentage_change,
+  
+  (MAX(CASE WHEN EXTRACT(MONTH FROM trading_date) = 11 THEN adj_close_spyx END) 
+   - MIN(CASE WHEN EXTRACT(MONTH FROM trading_date) = 6 THEN adj_close_spyx END)) 
+   / MIN(CASE WHEN EXTRACT(MONTH FROM trading_date) = 6 THEN adj_close_spyx END) * 100  AS spyx_percentage_change
+FROM stock_prices
+GROUP BY year
+ORDER BY year desc
+```
+<DataTable data={stock_prices_hurricane_annual_returns}/>
+
 ## What's Next?
 - [Connect your data sources](settings)
 - Edit/add markdown files in the `pages` folder
