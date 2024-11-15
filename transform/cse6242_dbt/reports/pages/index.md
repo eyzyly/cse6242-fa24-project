@@ -1,5 +1,5 @@
 ---
-title: Hi Evidence!
+title: Can you make money with Hurricanes?
 ---
 
 <Details title='How to edit this page'>
@@ -43,6 +43,19 @@ title: Hi Evidence!
     x=month
     y=sales_usd
     series=category
+/>
+
+```sql stock_prices
+  select
+      *
+  from analytics_marts.stock_prices
+```
+
+<LineChart
+    data={stock_prices}
+    title="Stock prices from 2014-2023"
+    x=trading_date
+    y={['adj_close_hd','adj_close_low','adj_close_spyx']} 
 />
 
 ## What's Next?
