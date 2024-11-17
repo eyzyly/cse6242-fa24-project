@@ -1,5 +1,5 @@
 ---
-title: Can you make money with Hurricanes?
+title: Test Extra Page?
 ---
 
 <Details title='How to edit this page'>
