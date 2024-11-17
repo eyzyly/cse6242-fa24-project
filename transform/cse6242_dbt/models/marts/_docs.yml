@@ -1,0 +1,41 @@
+models:
+  - name: dim_hurricane_attributes
+    description: Describe the features of a hurricane (severity, when it started and ended)
+    columns:
+      - name: storm_id
+        data_type: string
+        tests:
+          - unique
+        quote: true
+      - name: storm_severity
+        description: >
+          The Saffir Simpson Hurricane Scale is a 1-5 rating based on the hurricane's present intensity.
+          This is used to estimate potential property damage and flooding expected along the coast from a hurricane landfall.
+          Wind speed is the determining factor in the scale.
+        data_type: numeric
+        quote: true
+      - name: basin
+        description: Basin is AL for Atlantic, EP for East Pacific, and CP for Central Pacific.
+        data_type: string
+        tests:
+          - accepted_values:
+              values:
+                - AL
+                - EP
+                - CP
+        quote: true
+      - name: hurricane_startdtg
+        description: >
+          The time and date at which a tropical cyclone first has winds of at least tropical storm force.
+          This is the date and time at the beginning of the wind swath.
+        data_type: timestamp
+        quote: true
+      - name: hurricane_enddtg
+        description: >
+          The time and date of the latest advisory for tropical cyclones that are still active.
+          For tropical cyclones that no longer exist, ENDDTG is the time and date in the best track when the system was last designated as a tropical cyclone.
+        data_type: timestamp
+        quote: true
+      - name: hurricane_year
+        data_type: int64
+        quote: true
