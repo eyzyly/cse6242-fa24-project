@@ -25,6 +25,18 @@ title: Can you make money with Hurricanes?
     <DropdownOption value=2021/>
 </Dropdown>
 
+## Story so far?
+- Visualize stock price trends for last 10 years
+- Evaluate simple trading strategy where you would buy asset for June 1st and sell Nov 30
+- Learned that HD outperformed SPY between June 1st and Nov 30
+- Goal: Can we do better than this by leveraging hurricane data?
+- Constraint: HD stock only, sell only on Nov 30
+- Parameter: What day should I buy? 
+- Brought in hurricane characteristics which include year, region, severity, start and end period  (333 rows)    
+- Learned the hurricane pattern
+- Pick a buy date
+- Evaluate result
+
 ```sql orders_by_category
   select 
       date_trunc('month', order_datetime) as month,
@@ -103,6 +115,59 @@ GROUP BY year
 ORDER BY year desc
 ```
 <DataTable data={stock_prices_hurricane_annual_returns}/>
+
+```sql hurricanes_by_year
+  Select
+    hurricane_year,
+    max_severity,
+    count(*) as hurricane_counts
+  FROM analytics_marts.hurricane_attributes
+  group by hurricane_year,max_severity
+  
+```
+
+<BarChart
+    data={hurricanes_by_year}
+    x=hurricane_year
+    y=hurricane_counts
+    series=max_severity
+/>
+
+```sql average_hurricane_duration_by_severity
+  Select
+    max_severity,
+     AVG(EXTRACT(EPOCH FROM (hurricane_enddtg - hurricane_startdtg)) / 3600) / 24 AS avg_duration
+  FROM analytics_marts.hurricane_attributes
+  group by max_severity
+  order by max_severity asc
+  
+```
+
+<BarChart
+    data={average_hurricane_duration_by_severity}
+    x=max_severity
+    y=avg_duration
+    series=max_severity
+/>
+
+```sql hurricane_start_analysis
+  Select
+    *
+  FROM analytics_marts.hurricane_start_analysis
+```
+
+<DataTable data={hurricane_start_analysis}/>
+
+```sql hurricane_start_aggregate
+  Select
+    max_severity,
+    avg(difference_in_days) as avg_difference
+  FROM ${hurricane_start_analysis}
+  group by max_severity
+```
+
+<DataTable data={hurricane_start_aggregate}/>
+
 
 ## What's Next?
 - [Connect your data sources](settings)
