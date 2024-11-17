@@ -10,7 +10,7 @@ renamed as (
         FORMAT('%02d', cast(stormnum as int64)) as storm_num,  -- Use NUMERIC or FLOAT if needed
         PARSE_TIMESTAMP('%Y%m%d%H', CAST(startdtg AS STRING)) as hurricane_startdtg,
         PARSE_TIMESTAMP('%Y%m%d%H', CAST(enddtg AS STRING)) as hurricane_enddtg,
-        cast(year as INTEGER) as hurricane_year
+        PARSE_DATE('%Y', hurricane_year) as hurricane_year
     from source
 )
 select 
