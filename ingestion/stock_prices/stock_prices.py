@@ -15,7 +15,7 @@ def y_finance_source():
 def extract_historical_data():
 
     list_tickers = ['hd' ,'low' ,'spy'] 
-    data = yf.download(list_tickers,interval='1d',period="10y")
+    data = yf.download(list_tickers,interval='1d',period="11y")
     yield data
 
 
