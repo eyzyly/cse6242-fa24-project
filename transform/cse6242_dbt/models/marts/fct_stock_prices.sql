@@ -1,3 +1,3 @@
 select * 
-from {{ ref('base_stock_price_stock_price_history') }}
+from {{ ref('int_add_missing_dates_stock') }}
 order by 1 desc
