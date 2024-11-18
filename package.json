@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@evidence-dev/core-components": "^4.8.13",
+    "@evidence-dev/evidence": "^39.1.17"
+  }
+}
