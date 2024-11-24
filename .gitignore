@@ -5,3 +5,4 @@ transform/logs/dbt.log
 ingestion/hurricane_data/nhc.sqlite
 .vscode/launch.json
 nhc.sqlite
+nhc/
